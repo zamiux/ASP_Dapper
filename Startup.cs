@@ -36,7 +36,14 @@ namespace ASP_Dapper
             #endregion
 
             #region Add Special Services
-            services.AddScoped<ICompanyRepository,CompanyRepository>();
+            //services.AddScoped<ICompanyRepository,CompanyRepository>();
+
+            //dapper
+            //services.AddScoped<ICompanyRepository, CompanyRepositoryDapper>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepositoryDapper>();
+            //services.AddScoped<ICompanyRepository, CompanyRepositoryDapperSP>();
+            services.AddScoped<ICompanyRepository, CompanyRepositoryDapperContrib>();
+            services.AddScoped<IBonusRepository, BonusRepository>();
             #endregion
         }
 
